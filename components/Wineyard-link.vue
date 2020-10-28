@@ -1,6 +1,6 @@
 <template>
     <div class="wineyard-link">
-        <img src="" alt="wineyard image">
+        <img :src="image" alt="wineyard image">
         <h2>{{ name }}</h2>
     </div>
 </template>
@@ -8,7 +8,6 @@
 export default {
     name : "wineyardLink",
     props: [
-        "key",
         "name",
         "image"
     ]
