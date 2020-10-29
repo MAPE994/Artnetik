@@ -1,11 +1,12 @@
 <template>
     <div class="wineyard-link">
-        <img :src="image" alt="wineyard image">
+        <div v-html="image"/>
         <h2>{{ name }}</h2>
     </div>
 </template>
 <script>
 export default {
+
     name : "wineyardLink",
     props: [
         "name",
@@ -14,17 +15,16 @@ export default {
 }
 </script>
 
-<style>
-    div {
-        border: 1px black solid;
-    }
+<style lang="scss">
+    .wineyard-link {
+        background-color: burlywood;
+        cursor: pointer;
 
-    .wineyards-container,
-    .wineyard-details {
-        width: 100%;
-    }
-
-    .wineyard-details {
-        display: flex;
+        svg {
+            fill: #fff;
+            &:hover {
+                fill: #D3A6A3;
+            }
+        }
     }
 </style>
