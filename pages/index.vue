@@ -9,36 +9,36 @@
             />
         </div>
         <div class="wineyard-details">
-            <div class="container-left">
-                <img src="" alt="wineyard image">
-                <h2>{{vineyardId}}</h2>
-            </div>
-            <div class="container-right">
-                <p></p>
-            </div>
+            <vineyardDetails
+                v-bind:selectedVineyard = "selectedVineyard"
+            />
         </div>
     </div>    
 </template>
 <script lang="ts">
 import wineyardLink from "@/components/Wineyard-link.vue";
+import vineyardDetails from "@/components/Vineyard-details.vue";
 import json from '@/json/wineyards.json'
 
 export default {
     components : {
-        wineyardLink
+        wineyardLink,
+        vineyardDetails
     },
     data() {
       return {
         wineyards: json,
-        vineyardId: ""
+        selectedVineyard: "",
       }
     },
     methods : {
-        vineyardSelected : function(event: Object, wineyardId: string) {
+        vineyardSelected : function(event: Object, wineyardId: String) {
             var self = this;
-            console.log("haha: ", wineyardId);
-            self.vineyardId = wineyardId
-            //Vue.set(this.vineyardId, 'id', wineyardId)
+            self.wineyards.forEach(function(vineyard: Object){
+                if (vineyard.id === wineyardId) {
+                    self.selectedVineyard = vineyard
+                }
+            })
         }
     }
 }
