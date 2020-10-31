@@ -6,6 +6,14 @@
 
 <style>
 html {
+  @font-face {
+    font-family: 'Courier Prime';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('~assets/fonts/CourierPrime-Bold.ttf') format('truetype');
+  }
+
   font-family:
     'Source Sans Pro',
     -apple-system,

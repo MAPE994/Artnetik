@@ -44,9 +44,6 @@ export default {
 }
 </script>
 <style lang="scss">
-    div {
-        border: 1px black solid;
-    }
 
     .wineyards,
     .wineyard-details {
@@ -56,6 +53,6 @@ export default {
     }
 
     .wineyards {
-        box-shadow: inset 0 -10px 10px -10px #000000;
+        box-shadow: inset 0 -100px 100px -80px #000000 
     }
 </style>
