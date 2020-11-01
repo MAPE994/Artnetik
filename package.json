@@ -7,7 +7,7 @@
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
-    "heroku-postbuild": "npm run dev"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
