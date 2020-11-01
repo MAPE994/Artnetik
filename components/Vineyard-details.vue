@@ -57,4 +57,38 @@ export default {
             }
         }
     }
+
+    @media only screen and (max-width: 450px) {
+        .vineyard-details-container {
+        display: block;
+
+        .container-left {
+            margin-top: 50px;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+
+            h2 {
+               text-align: center; 
+            }
+
+            h3 {
+                text-align: center;
+            }
+
+            svg {
+                width: 100%;
+                height: 100px;
+                fill: #D3A6A3;
+            }   
+        }
+        .container-right {
+            p {
+                text-align: center;
+                max-width: 100%;
+                margin-top: 0;
+            }
+        }
+    }
+    }
 </style>

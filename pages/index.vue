@@ -1,6 +1,6 @@
 <template>
     <div class="vineyards-container">
-        <div class="vineyards">
+        <div class="vineyards" v-if="$mq !== 'sm'">
             <vineyardLink v-for = "vineyard in vineyards"
                         v-bind:key = "vineyard.id"
                         v-bind:image = "vineyard.image"
@@ -8,6 +8,17 @@
                         v-bind:isActive = "vineyard.isActive"
                         v-on:click.native = "vineyardSelected($event, vineyard.id)"            
             />
+        </div>
+        <div v-if="$mq === 'sm'">
+            <vueSlickCarousel :dots="true">
+                    <vineyardLink v-for = "vineyard in vineyards"
+                        v-bind:key = "vineyard.id"
+                        v-bind:image = "vineyard.image"
+                        v-bind:name = "vineyard.name"
+                        v-bind:isActive = "vineyard.isActive"
+                        v-on:click.native = "vineyardSelected($event, vineyard.id)"            
+                    />
+            </vueSlickCarousel>  
         </div>
         <div class="vineyard-details">
             <vineyardDetails
@@ -20,12 +31,17 @@
 <script>
 import vineyardLink from "@/components/Vineyard-link.vue";
 import vineyardDetails from "@/components/Vineyard-details.vue";
+import vueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import json from '@/json/vineyards.json';
 
 export default {
     components: {
         vineyardLink,
-        vineyardDetails
+        vineyardDetails,
+        vueSlickCarousel
     },
     data() {
       return {

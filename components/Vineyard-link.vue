@@ -46,7 +46,25 @@ export default {
             }
         }
     }
-    
+    .slick-slider {
+        .vineyard-link {
+            margin-bottom: 0px;
+
+            h2 {
+            text-align: center;
+            font-family: 'Courier Prime Bold';
+            font-size: 30px;
+            color: #D3A6A3;
+            }
+
+            svg {
+                height: 100px;
+                width: 100%;
+                fill: #D3A6A3;
+            }
+        }
+    } 
+
     .active {
         svg {
             fill: #D3A6A3;
