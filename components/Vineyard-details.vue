@@ -10,10 +10,11 @@
     </div>
 </div>
 </template>
+
 <script>
 export default {
 
-    name : "vineyardDetails",
+    name: "vineyardDetails",
     props: [
         "selectedVineyard"
     ]
@@ -45,16 +46,19 @@ export default {
             padding: 70px;
             width: 30%;
             max-width: 30%;
+
             h2 {
                 font-family: 'Courier Prime Bold';
                 font-size: 42px;
                 color: #221F20;
             }
+
             h3 {
                 font-family: 'Courier Prime Bold';
                 font-size: 22px;
                 color: #D3A6A3;
             }
+
             svg {
                 height: 100px;
                 fill: #D3A6A3;
