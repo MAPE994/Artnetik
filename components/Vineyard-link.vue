@@ -1,5 +1,5 @@
 <template>
-    <div class="wineyard-link" v-bind:class="{ active: isActive }">
+    <div class="vineyard-link" v-bind:class="{ active: isActive }">
         <div v-html="image"/>
         <h2>{{ name }}</h2>
     </div>
@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name: "wineyardLink",
+    name: "vineyardLink",
     props: [
         "name",
         "image",
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .wineyard-link {
+    .vineyard-link {
         margin-top: 100px;
         margin-bottom: 85px;
         cursor: pointer;
@@ -59,7 +59,7 @@ export default {
         &::after {
             position: absolute;
             content: "";
-            top: 297px;
+            top: 355px;
             width: 0;
             height: 0;
             border-left: 50px solid transparent;
