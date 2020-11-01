@@ -17,10 +17,10 @@
     </div>    
 </template>
 
-<script lang="ts">
+<script>
 import vineyardLink from "@/components/Vineyard-link.vue";
 import vineyardDetails from "@/components/Vineyard-details.vue";
-import json from '@/json/vineyards.json'
+import json from '@/json/vineyards.json';
 
 export default {
     components: {
@@ -34,13 +34,11 @@ export default {
       }
     },
     methods : {
-        vineyardSelected: function(event: Object, vineyardId: String) {
-            var self = this;
-            
-            self.vineyards.forEach((vineyard: Object) => {
+        vineyardSelected: function(event, vineyardId) {            
+            this.vineyards.forEach((vineyard) => {
                 if (vineyard.id === vineyardId) {
                     vineyard.isActive = true;
-                    self.selectedVineyard = vineyard
+                    this.selectedVineyard = vineyard
                 } else {
                     vineyard.isActive = false;
                 }

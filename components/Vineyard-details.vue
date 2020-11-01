@@ -25,7 +25,7 @@ export default {
     .vineyard-details-container {
         display: flex;
         justify-content: center;    
-            
+
         .container-left {
             padding: 70px;
             width: 30%;
