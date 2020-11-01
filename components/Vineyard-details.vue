@@ -82,6 +82,7 @@ export default {
                 fill: #D3A6A3;
             }   
         }
+        
         .container-right {
             p {
                 text-align: center;

@@ -9,7 +9,7 @@
                         v-on:click.native = "vineyardSelected($event, vineyard.id)"            
             />
         </div>
-        <div v-if="$mq === 'sm'">
+        <div class="carousel-mobile" v-if="$mq === 'sm'">
             <vueSlickCarousel :dots="true">
                     <vineyardLink v-for = "vineyard in vineyards"
                         v-bind:key = "vineyard.id"
@@ -33,7 +33,6 @@ import vineyardLink from "@/components/Vineyard-link.vue";
 import vineyardDetails from "@/components/Vineyard-details.vue";
 import vueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import json from '@/json/vineyards.json';
 
@@ -48,6 +47,18 @@ export default {
         vineyards: json,
         selectedVineyard: json[0],
       }
+    },
+    head() {
+        return {
+            title: "Artnetik test",
+            meta: [
+                {
+                    hid: 'Artnetik test',
+                    name: 'Artnetik test',
+                    content: 'Artnetik test'
+                }
+            ]
+        }
     },
     methods : {
         vineyardSelected: function(event, vineyardId) {            
