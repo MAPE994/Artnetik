@@ -1,6 +1,6 @@
 <template>
     <div class="vineyards-container">
-        <div class="vineyards" v-if="$mq !== 'sm'">
+        <div class="vineyards" v-if="$mq !== 'sm'" :style="{ backgroundImage: `url(${bgImage})`}">
             <vineyardLink v-for = "vineyard in vineyards"
                         v-bind:key = "vineyard.id"
                         v-bind:image = "vineyard.image"
@@ -9,7 +9,7 @@
                         v-on:click.native = "vineyardSelected($event, vineyard.id)"            
             />
         </div>
-        <div class="carousel-mobile" v-if="$mq === 'sm'">
+        <div class="carousel-mobile" v-if="$mq === 'sm'" :style="{ backgroundImage: `url(${bgImage})`}">
             <vueSlickCarousel :dots="true">
                     <vineyardLink v-for = "vineyard in vineyards"
                         v-bind:key = "vineyard.id"
@@ -34,6 +34,7 @@ import vineyardDetails from "@/components/Vineyard-details.vue";
 import vueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import bgImage from "assets/img/vinograd.jpg";
 import json from '@/json/vineyards.json';
 
 export default {
@@ -44,6 +45,7 @@ export default {
     },
     data() {
       return {
+        bgImage: bgImage,  
         vineyards: json,
         selectedVineyard: json[0],
       }
@@ -84,6 +86,11 @@ export default {
     }
 
     .vineyards {
-        box-shadow: inset 0 -200px 200px -160px #606060 
+        box-shadow: inset 0 -200px 200px -160px #606060;
+        background-position: center;
+    }
+
+    .carousel-mobile {
+        background-size: contain;
     }
 </style>

@@ -49,6 +49,7 @@ export default {
     .slick-slider {
         .vineyard-link {
             margin-bottom: 0px;
+            outline: none;
 
             h2 {
             text-align: center;
